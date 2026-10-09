@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Mazurity · Sign-in return</title>
+<style>:root{color-scheme:dark;font-family:"Segoe UI",system-ui,sans-serif;background:#171411;color:#f6eee8}body{min-height:100vh;margin:0;display:grid;place-items:center}main{max-width:34rem;margin:1.5rem;padding:2rem;border:1px solid #704630;border-radius:18px;background:#211a16;box-shadow:0 24px 70px #0005}.mark{width:48px;height:48px;display:grid;place-items:center;border-radius:14px;background:#7f462d;color:#ffe2c7;font-size:22px}h1{margin:1rem 0 .5rem;font-size:1.5rem}p{color:#c8b7aa;line-height:1.6}</style>
+</head>
+<body><main><div class="mark" aria-hidden="true">M</div><h1 id="heading">Returning to Mazurity…</h1><p id="message">Finishing the sign-in handoff to the Mazurity app on this computer. You can return to the app if this tab stays open.</p><noscript><p>JavaScript is required for the local desktop handoff. Close this tab and retry sign-in from Mazurity.</p></noscript></main>
+<script>(()=>{const incoming=new URLSearchParams(window.location.search);const allowed=["code","state","error","error_description","device_id","type","expires_in"];const outgoing=new URLSearchParams();for(const key of allowed){const value=incoming.get(key);if(value!==null)outgoing.set(key,value)}window.history.replaceState(null,"",window.location.pathname);if(!outgoing.has("code")&&!outgoing.has("error")){document.getElementById("heading").textContent="No sign-in response found";document.getElementById("message").textContent="This page is only used as the return URL after VK ID sign-in. Close this tab and start Connect VK ID from Mazurity.";return}const localCallback=new URL("http://127.0.0.1:47831/");localCallback.search=outgoing.toString();window.location.replace(localCallback.toString())})();</script>
+</body></html>
